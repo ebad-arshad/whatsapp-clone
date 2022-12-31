@@ -20,13 +20,16 @@
     color: #41525d;
 }
 
-.loginInputs {
+.loginInputs,
+.signUpInputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.loginInput input {
+.loginInput input,
+.signUpInput input,
+.uploadFile label p {
     padding: 16px;
     width: 100%;
     border: 1px solid #e6e8ea;
@@ -36,16 +39,24 @@
     transition: .2s;
 }
 
-.loginInput input:focus {
+.uploadFile label p {
+    color: grey;
+    cursor: pointer;
+}
+
+.loginInput input:focus,
+.signUpInput input:focus,
+.uploadFile label p:hover {
     border: 1px solid #00a884;
     transition: .2s;
 }
 
-.loginButton button {
-    padding: 10px 0;
+.loginButton button,
+.signUpButton button {
+    padding: 8px 0;
     margin: 20px 0;
     width: 100%;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: bolder;
     color: #fff;
     background: #00a884;
@@ -56,7 +67,8 @@
     outline: none;
 }
 
-.loginButton button:hover {
+.loginButton button:hover,
+.signUpButton button:hover {
     transition: .2s;
     background: #029172;
 }
@@ -102,6 +114,13 @@
     transition: .2s;
     background: #029172;
 }
+
+#uploadImage {
+    display: none;
+}
+
+/* .uploadFile {} */
+
 
 /* Ant Design */
 
