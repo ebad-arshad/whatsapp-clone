@@ -1,0 +1,52 @@
+.modalInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.modalInput p {
+    color: red;
+}
+
+.modalInput input {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #e6e8ea;
+    padding: 10px;
+    outline: 0;
+    transition: .2s;
+}
+
+.modalInput input:focus {
+    border-color: #00a884;
+    transition: .2s;
+}
+
+/* Ant Design */
+
+.ant-modal-footer button:nth-child(2) {
+    background: #00a884;
+}
+
+.ant-modal-footer button:nth-child(2):hover {
+    background: #029172 !important;
+}
+
+.ant-modal-footer button:nth-child(2):active {
+    background: #029172 !important;
+}
+
+.ant-modal-footer button:nth-child(1):hover {
+    border-color: #029172 !important;
+    color: #029172;
+}
+
+.ant-modal-footer button:nth-child(1):active {
+    border-color: #029172 !important;
+    color: #029172;
+}
+
+.anticon-close-circle svg {
+    fill: #00a884;
+}

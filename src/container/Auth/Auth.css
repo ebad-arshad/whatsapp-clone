@@ -1,0 +1,122 @@
+.container {
+    min-width: 400px;
+    width: 450px;
+    margin: 0 auto;
+    margin-top: -130px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 17px 50px 0 rgb(11 20 26 / 19%), 0 12px 15px 0 rgb(11 20 26 / 24%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.heading {
+    font-size: 29px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0 30px 0;
+    color: #41525d;
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginInput input {
+    padding: 16px;
+    width: 100%;
+    border: 1px solid #e6e8ea;
+    font-size: 15px;
+    outline: none;
+    border-radius: 4px;
+    transition: .2s;
+}
+
+.loginInput input:focus {
+    border: 1px solid #00a884;
+    transition: .2s;
+}
+
+.loginButton button {
+    padding: 10px 0;
+    margin: 20px 0;
+    width: 100%;
+    font-size: 19px;
+    font-weight: bolder;
+    color: #fff;
+    background: #00a884;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+    outline: none;
+}
+
+.loginButton button:hover {
+    transition: .2s;
+    background: #029172;
+}
+
+.resetPassword {
+    text-align: center;
+    color: #00a884;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.resetPassword:hover {
+    text-decoration: underline;
+}
+
+.lineBreak {
+    height: 1px;
+    background-color: #e6e8ea;
+    border: none;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.createButton {
+    margin: 0 auto;
+}
+
+.createButton button {
+    width: 250px;
+    color: #fff;
+    font-size: 17px;
+    background: #00a884;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 600;
+    transition: .2s;
+    cursor: pointer;
+    outline: none;
+}
+
+.createButton button:hover {
+    transition: .2s;
+    background: #029172;
+}
+
+/* Ant Design */
+
+.ant-modal-confirm-btns button {
+    background: #00a884;
+}
+
+.ant-modal-confirm-btns button:hover {
+    background: #029172 !important;
+}
+
+.ant-modal-confirm-btns button:active {
+    background: #029172 !important;
+}
+
+.anticon-close-circle svg {
+    fill: #00a884;
+}

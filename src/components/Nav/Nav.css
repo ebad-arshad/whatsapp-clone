@@ -1,0 +1,18 @@
+.navBar>div {
+    display: flex;
+    align-items: center;
+    padding: 28px 38px;
+    gap: 15px;
+    margin: 0 140px;
+}
+
+.navBar {
+    height: 222px;
+    background: #00a884;
+}
+
+.navText {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 13px;
+}
