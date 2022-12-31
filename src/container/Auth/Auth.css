@@ -119,8 +119,29 @@
     display: none;
 }
 
-/* .uploadFile {} */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(81, 81, 81, 0.6);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.spinner span {
+    overflow: visible;
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.spinner i {
+    height: 30px !important;
+    width: 30px !important;
+}
 
 /* Ant Design */
 
@@ -138,4 +159,8 @@
 
 .anticon-close-circle svg {
     fill: #00a884;
+}
+
+.ant-spin-dot-spin * {
+    background-color: #fff !important;
 }

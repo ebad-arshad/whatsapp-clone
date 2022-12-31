@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import '../../container/Auth/Auth.css';
-import { Modal } from 'antd';
+import { Modal, Spin } from 'antd';
 import { auth, signInWithEmailAndPassword } from '../../Firebase/Firebase';
 import { useDispatch } from "react-redux";
 import ModalResetPass from '../ModalResetPass/ModalResetPass';
@@ -12,6 +12,7 @@ const Login = ({ setToggle }) => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const [togglingModal, setTogglingModal] = useState(false);
+    const [togglingSpinner, setTogglingSpinner] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -29,12 +30,27 @@ const Login = ({ setToggle }) => {
             });
         }
         else {
+            setTogglingSpinner(true);
             signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
                 .then((userCredential) => {
                     const userData = JSON.stringify(userCredential.user);
                     dispatch({ type: 'SIGNEDIN', userData })
                 })
-                .catch((error) => { });
+                .catch((error) => {
+                    setTogglingSpinner(false);
+                    if (error.code == 'auth/user-not-found') {
+                        Modal.error({
+                            title: 'User is incorrect',
+                            content: 'User not found.',
+                        });
+                    }
+                    else if (error.code == 'auth/wrong-password') {
+                        Modal.error({
+                            title: 'Password is incorrect',
+                            content: 'Wrong password.',
+                        });
+                    }
+                });
         }
     }
 
@@ -58,6 +74,7 @@ const Login = ({ setToggle }) => {
             <hr className='lineBreak' />
             <div className="createButton"><button onClick={() => setToggle(true)}>Create New Account</button></div>
             <ModalResetPass togglingModal={togglingModal} showModal={showModal} />
+            {togglingSpinner && <div className="spinner"><Spin /></div >}
         </div>
     )
 }

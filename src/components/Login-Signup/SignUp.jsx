@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import '../../container/Auth/Auth.css';
-import { Modal } from 'antd';
+import { Modal, Spin } from 'antd';
 import { auth, db, createUserWithEmailAndPassword, storage, ref, uploadBytesResumable, getDownloadURL, doc, setDoc } from '../../Firebase/Firebase';
 import { useDispatch } from 'react-redux';
 
@@ -13,6 +13,7 @@ const SignUp = ({ setToggle }) => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const imageRef = useRef();
+    const [togglingSpinner, setTogglingSpinner] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -40,6 +41,13 @@ const SignUp = ({ setToggle }) => {
             });
             return;
         }
+        else if (imageRef.current.files.length == 0) {
+            Modal.error({
+                title: 'Image not found',
+                content: 'Please select an image.',
+            });
+            return;
+        }
         else if (!imageType.includes(imageRef.current.files[0].type)) {
             Modal.error({
                 title: 'Image type is not acceptable',
@@ -55,6 +63,7 @@ const SignUp = ({ setToggle }) => {
             return;
         }
         else {
+            setTogglingSpinner(true);
             const imageFile = imageRef.current.files[0];
             createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
                 .then(async (userCredential) => {
@@ -69,6 +78,11 @@ const SignUp = ({ setToggle }) => {
                     dispatch({ type: 'SIGNEDIN', userData })
                 })
                 .catch((error) => {
+                    setTogglingSpinner(false);
+                    Modal.error({
+                        title: 'Something is incorrect',
+                        content: 'Please check everything and try again.',
+                    });
                     console.log('Error ==>', error.message)
                 });
         }
@@ -88,13 +102,14 @@ const SignUp = ({ setToggle }) => {
                     <input ref={passwordRef} type="password" placeholder='Password' />
                 </div>
                 <div className="signUpInput uploadFile">
-                    <label htmlFor="uploadImage"><p>Upload Image</p></label>
-                    <input accept='image/png,image/jpeg,image/jpg' id='uploadImage' ref={imageRef} type="file" placeholder='Password' />
+                    <label htmlFor="uploadImage"><p>Upload image</p></label>
+                    <input accept='image/png,image/jpeg,image/jpg' id='uploadImage' ref={imageRef} type="file" />
                 </div>
             </div>
             <div className="signUpButton"><button onClick={signUpBtn}>Sign up</button></div>
             <hr className='lineBreak' />
             <div className="createButton"><button onClick={() => setToggle(false)}>Login Instead</button></div>
+            {togglingSpinner && <div className="spinner"><Spin /></div >}
         </div>
     )
 }
