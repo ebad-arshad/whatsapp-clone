@@ -1,11 +1,32 @@
+@font-face {
+    font-family: SegoeUI;
+    src: url('./assets/fonts/Segoe-UI/Segoe\ UI.ttf');
+}
+
 * {
-    font-family: sans-serif;
+    font-family: SegoeUI;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #f0f2f5;
+    background: #374045;
     position: relative;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111b21;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374045;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #374045;
 }

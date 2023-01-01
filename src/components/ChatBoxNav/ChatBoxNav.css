@@ -1,0 +1,48 @@
+.chatBoxNav {
+    background: #202c33;
+    height: 61px;
+    border: 1px solid #202c33;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    z-index: 1;
+    position: relative;
+}
+
+.imageCover {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.imageCover img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.friendName {
+    flex: 1;
+    border-bottom: 1px solid #202c33;
+    color: #fff;
+}
+
+.chatBoxIcons {
+    display: flex;
+    align-items: center;
+    color: #aebac1;
+    gap: 30px;
+}
+
+.chatBoxIcons div {
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.chatBoxIcons div:nth-child(1) {
+    font-size: 20px;
+}

@@ -1,0 +1,13 @@
+.main {
+    width: 100%;
+    display: flex;
+}
+
+.main>div:nth-child(1) {
+    flex: .3;
+    height: 100vh;
+}
+
+.main>div:nth-child(2) {
+    flex: .7;
+}

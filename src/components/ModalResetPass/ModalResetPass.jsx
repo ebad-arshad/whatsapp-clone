@@ -1,5 +1,5 @@
 import { Modal } from 'antd';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './ModalResetPass.css';
 import { auth, sendPasswordResetEmail } from '../../Firebase/Firebase';
 

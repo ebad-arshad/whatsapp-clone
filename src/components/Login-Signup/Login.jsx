@@ -4,6 +4,7 @@ import { Modal, Spin } from 'antd';
 import { auth, signInWithEmailAndPassword } from '../../Firebase/Firebase';
 import { useDispatch } from "react-redux";
 import ModalResetPass from '../ModalResetPass/ModalResetPass';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setToggle }) => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
@@ -13,6 +14,8 @@ const Login = ({ setToggle }) => {
     const passwordRef = useRef();
     const [togglingModal, setTogglingModal] = useState(false);
     const [togglingSpinner, setTogglingSpinner] = useState(false);
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -35,16 +38,17 @@ const Login = ({ setToggle }) => {
                 .then((userCredential) => {
                     const userData = JSON.stringify(userCredential.user);
                     dispatch({ type: 'SIGNEDIN', userData })
+                    navigate('/');
                 })
                 .catch((error) => {
                     setTogglingSpinner(false);
-                    if (error.code == 'auth/user-not-found') {
+                    if (error.code === 'auth/user-not-found') {
                         Modal.error({
                             title: 'User is incorrect',
                             content: 'User not found.',
                         });
                     }
-                    else if (error.code == 'auth/wrong-password') {
+                    else if (error.code === 'auth/wrong-password') {
                         Modal.error({
                             title: 'Password is incorrect',
                             content: 'Wrong password.',

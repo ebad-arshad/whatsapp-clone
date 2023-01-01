@@ -3,6 +3,7 @@ import '../../container/Auth/Auth.css';
 import { Modal, Spin } from 'antd';
 import { auth, db, createUserWithEmailAndPassword, storage, ref, uploadBytesResumable, getDownloadURL, doc, setDoc } from '../../Firebase/Firebase';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = ({ setToggle }) => {
 
@@ -14,6 +15,8 @@ const SignUp = ({ setToggle }) => {
     const passwordRef = useRef();
     const imageRef = useRef();
     const [togglingSpinner, setTogglingSpinner] = useState(false);
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -41,7 +44,7 @@ const SignUp = ({ setToggle }) => {
             });
             return;
         }
-        else if (imageRef.current.files.length == 0) {
+        else if (imageRef.current.files.length === 0) {
             Modal.error({
                 title: 'Image not found',
                 content: 'Please select an image.',
@@ -75,15 +78,23 @@ const SignUp = ({ setToggle }) => {
                         password: passwordRef.current.value,
                         imageURL: imageURL,
                     });
-                    dispatch({ type: 'SIGNEDIN', userData })
+                    dispatch({ type: 'SIGNEDUP', userData })
+                    navigate('/');
                 })
                 .catch((error) => {
                     setTogglingSpinner(false);
-                    Modal.error({
-                        title: 'Something is incorrect',
-                        content: 'Please check everything and try again.',
-                    });
-                    console.log('Error ==>', error.message)
+                    if (error.code === 'auth/email-already-in-use') {
+                        Modal.error({
+                            title: 'Email already taken',
+                            content: 'Email has already been taken please try another one.',
+                        });
+                    }
+                    else {
+                        Modal.error({
+                            title: 'Something is incorrect',
+                            content: 'Please check everything and try again.',
+                        });
+                    }
                 });
         }
     }

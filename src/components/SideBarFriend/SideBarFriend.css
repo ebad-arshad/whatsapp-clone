@@ -1,0 +1,56 @@
+.sideBarFriend {
+    height: 72px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    margin-top: -1px;
+}
+
+.sideBarFriend:hover {
+    background: #202c33;
+    /* #2a3942 */
+}
+
+.sideBarFriend:hover .friendName p:nth-child(2) {
+    color: rgb(197, 197, 197);
+}
+
+.friendPic {
+    width: 53px;
+    height: 53px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.friendPic img {
+    width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.friendName {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #202c33;
+    justify-content: center;
+    height: inherit;
+}
+
+.friendName p:nth-child(2) {
+    font-size: 14px;
+    color: #8696a0;
+}
+
+.friendTime {
+    font-size: 12px;
+    color: #8696a0;
+    border-bottom: 1px solid #202c33;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}

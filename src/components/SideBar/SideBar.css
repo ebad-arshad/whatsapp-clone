@@ -1,0 +1,9 @@
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a3942;
+}
+
+.sideBar .sideBarList {
+    flex: 1;
+}

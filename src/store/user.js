@@ -8,6 +8,16 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: JSON.parse(action.userData),
+      }
+    case 'SIGNEDUP':
+      return {
+        ...state,
+        user: JSON.parse(action.userData),
+      }
+    case 'HASLOGGEDIN':
+      return {
+        ...state,
+        user: JSON.parse(action.userData),
         isLoggedIn: true,
       }
     default:

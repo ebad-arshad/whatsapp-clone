@@ -1,0 +1,53 @@
+.chat {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    padding: 20px 70px;
+    flex: 1;
+    max-height: calc(100vh - 121px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.user p:nth-child(1),
+.friend p:nth-child(1) {
+    color: #fff;
+    font-size: 15px;
+}
+
+.user p:nth-child(2),
+.friend p:nth-child(2) {
+    color: hsla(0, 0%, 100%, 0.6);
+    font-size: 12px;
+    align-self: flex-end;
+    margin-bottom: -3px;
+}
+
+.user,
+.friend {
+    display: flex;
+    gap: 10px;
+    padding: 7px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.user>p,
+.friend>p {
+    max-width: 450px;
+    word-wrap: break-word;
+}
+
+.user {
+    border-top-right-radius: 0;
+    background: #005c4b;
+    align-self: flex-end;
+}
+
+.friend {
+    border-top-left-radius: 0;
+    background: #202c33;
+    align-self: flex-start;
+}

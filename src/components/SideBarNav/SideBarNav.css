@@ -1,0 +1,40 @@
+.sideBarNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+    height: 60px;
+    flex-wrap: wrap;
+    background: #202c33;
+}
+
+.imageCover {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.imageCover img {
+    width: 100%;
+    object-fit: contain ;
+}
+
+.sideBarNavOptions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.sideBarNavOptions div {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: #aebac1;
+}
+
+.sideBarNavOptions div:nth-child(4) {
+    font-size: 16px;
+}

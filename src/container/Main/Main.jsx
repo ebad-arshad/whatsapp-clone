@@ -1,9 +1,14 @@
 import React from 'react';
+import ChatBox from '../../components/ChatBox/ChatBox';
+import SideBar from '../../components/SideBar/SideBar';
 import './Main.css';
 
 const Main = () => {
     return (
-        <div>Main</div>
+        <div className='main'>
+            <SideBar />
+            <ChatBox />
+        </div>
     )
 }
 
