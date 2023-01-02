@@ -1,0 +1,64 @@
+.userSearched {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 0 auto;
+}
+
+.userPic {
+    width: 160px;
+    height: 160px;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #cfd4d6;
+    color: #6a7175;
+    font-size: 150px;
+    position: relative;
+}
+
+.userPic svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.userPic img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.userName {
+    margin-top: 10px;
+    color: #d9e1e7;
+    user-select: none;
+    font-size: 22px;
+}
+
+.userNumber {
+    color: #cad6de;
+    font-size: 18px;
+    user-select: none;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.btns svg:nth-child(1) {
+    color: #d9e1e7;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.btns svg:nth-child(2) {
+    color: #d9e1e7;
+    cursor: pointer;
+    font-size: 27px;
+}

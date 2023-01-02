@@ -1,0 +1,46 @@
+.whatsAppScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    user-select: none;
+}
+
+.whatsAppScreen>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.description {
+    text-align: center;
+    color: #8696a0;
+}
+
+.description h1 {
+    font-weight: 100;
+    color: #9fadb6;
+    margin: 25px 0 15px 0;
+}
+
+.description p {
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    color: #61686c;
+}
+
+.footer span {
+    font-size: 14px;
+}
+
+.footer svg {
+    font-size: 10px;
+}

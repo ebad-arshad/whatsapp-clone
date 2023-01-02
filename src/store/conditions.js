@@ -1,13 +1,13 @@
 const INITIAL_STATE = {
-  user: '',
+  isAddFriendTab: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'SIGNEDIN':
+    case 'ADDFRIENDTOGGLE':
       return {
         ...state,
-        user: JSON.parse(action.userData),
+        isAddFriendTab: action.bool,
       }
     default:
       return state;

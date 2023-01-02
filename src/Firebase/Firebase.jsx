@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
-import { doc, setDoc, getFirestore } from 'firebase/firestore'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signOut, } from "firebase/auth";
+import { doc, setDoc, getFirestore, collection, query, where, getDocs, } from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDwCWxd2M5NdD7idagpOIqczYxL8RodCds",
@@ -17,4 +17,4 @@ const auth = getAuth(app);
 const storage = getStorage(app);
 const db = getFirestore(app);
 
-export { auth, storage, db, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, ref, uploadBytesResumable, getDownloadURL, doc, setDoc, };
+export { auth, storage, db, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, ref, uploadBytesResumable, getDownloadURL, doc, signOut, setDoc, collection, query, where, getDocs, };

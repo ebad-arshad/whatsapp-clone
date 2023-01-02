@@ -28,8 +28,7 @@
 }
 
 .loginInput input,
-.signUpInput input,
-.uploadFile label p {
+.signUpInput input {
     padding: 16px;
     width: 100%;
     border: 1px solid #e6e8ea;
@@ -39,14 +38,9 @@
     transition: .2s;
 }
 
-.uploadFile label p {
-    color: grey;
-    cursor: pointer;
-}
 
 .loginInput input:focus,
-.signUpInput input:focus,
-.uploadFile label p:hover {
+.signUpInput input:focus {
     border: 1px solid #00a884;
     transition: .2s;
 }
@@ -71,6 +65,12 @@
 .signUpButton button:hover {
     transition: .2s;
     background: #029172;
+}
+
+.signUpPhoneNumber input::-webkit-outer-spin-button,
+.signUpPhoneNumber input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .resetPassword {
@@ -113,10 +113,6 @@
 .createButton button:hover {
     transition: .2s;
     background: #029172;
-}
-
-#uploadImage {
-    display: none;
 }
 
 .spinner {

@@ -8,29 +8,6 @@ const SideBarList = () => {
             <SideBarFriend />
             <SideBarFriend />
             <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
-            <SideBarFriend />
         </div>
     )
 }

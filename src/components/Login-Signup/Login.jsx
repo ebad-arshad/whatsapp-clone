@@ -4,9 +4,9 @@ import { Modal, Spin } from 'antd';
 import { auth, signInWithEmailAndPassword } from '../../Firebase/Firebase';
 import { useDispatch } from "react-redux";
 import ModalResetPass from '../ModalResetPass/ModalResetPass';
-import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setToggle }) => {
+    
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
@@ -14,8 +14,6 @@ const Login = ({ setToggle }) => {
     const passwordRef = useRef();
     const [togglingModal, setTogglingModal] = useState(false);
     const [togglingSpinner, setTogglingSpinner] = useState(false);
-
-    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -38,7 +36,6 @@ const Login = ({ setToggle }) => {
                 .then((userCredential) => {
                     const userData = JSON.stringify(userCredential.user);
                     dispatch({ type: 'SIGNEDIN', userData })
-                    navigate('/');
                 })
                 .catch((error) => {
                     setTogglingSpinner(false);
@@ -67,7 +64,7 @@ const Login = ({ setToggle }) => {
             <div className="heading">Login to Whatsapp</div>
             <div className='loginInputs'>
                 <div className="loginInput loginEmail">
-                    <input ref={emailRef} type="text" placeholder='Email address or phone number' />
+                    <input ref={emailRef} type="text" placeholder='Email address' />
                 </div>
                 <div className="loginInput loginPassword">
                     <input ref={passwordRef} type="password" placeholder='Password' />

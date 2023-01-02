@@ -1,0 +1,75 @@
+.sideBarAddFriend {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a3942;
+}
+
+.goBack {
+    width: 100%;
+    height: 107px;
+    display: flex;
+    align-items: flex-end;
+    color: #cad6de;
+    padding: 15px 25px;
+    gap: 20px;
+}
+
+.goBack svg {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.goBack span {
+    font-size: 20px;
+    user-select: none;
+}
+
+.addFriendBox {
+    flex: 1;
+    background: #111b21;
+}
+
+.addFriendInput {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    align-items: center;
+    color: #8696a0;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.addFriendInput input {
+    width: 80%;
+    border-radius: 8px;
+    background: #202c33;
+    padding: 9px 10px 9px 70px;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.addFriendInput input::placeholder {
+    color: #8696a0;
+}
+
+.addFriendInput>svg {
+    font-size: 17px;
+    color: #8696a0;
+    margin-right: -30px;
+    z-index: 1;
+}
+
+.noUserFound {
+    text-align: center;
+    color: #8696a0;
+    font-size: 20px;
+    user-select: none;
+}
+
+.friendSearch::-webkit-outer-spin-button,
+.friendSearch::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

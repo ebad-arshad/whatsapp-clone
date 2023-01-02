@@ -1,6 +1,7 @@
 .main {
     width: 100%;
     display: flex;
+    background: #202c33;
 }
 
 .main>div:nth-child(1) {
